@@ -8,4 +8,8 @@ public interface ITipoProductoService {
     public void insert (TipoProducto tipoproducto);
 
     List<TipoProducto>list();
+
+    public void delete(int idTipoProducto);
+
+    List<TipoProducto>search(String categoriaNombre);
 }

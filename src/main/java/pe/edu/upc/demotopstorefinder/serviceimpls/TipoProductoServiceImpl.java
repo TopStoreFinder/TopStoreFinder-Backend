@@ -22,4 +22,14 @@ public class TipoProductoServiceImpl implements ITipoProductoService {
     public List<TipoProducto> list() {
         return pR.findAll();
     }
+
+    @Override
+    public void delete(int idTipoProducto) {
+        pR.deleteById(idTipoProducto);
+    }
+
+    @Override
+    public List<TipoProducto> search(String categoriaNombre) {
+        return pR.buscarCategoriaNombre(categoriaNombre);
+    }
 }

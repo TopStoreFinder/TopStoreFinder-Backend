@@ -25,4 +25,15 @@ public class TipoProductoController {
     public List<TipoProducto> listar(){
         return pService.list();
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable ("id") Integer id){ pService.delete(id);}
+
+    @PutMapping
+    public void actualizar(@RequestBody TipoProducto tp){ pService.insert(tp);}
+
+    @PostMapping("/buscar")
+    public List<TipoProducto> buscar(@RequestBody TipoProducto p){
+        return pService.search(p.getCategoriaNombre());
+    }
 }
