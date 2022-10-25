@@ -23,4 +23,15 @@ public class TipoPagoController {
     public List<TipoPago> listar(){
         return pService.list();
     }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable ("id") Integer id){ pService.delete(id);}
+
+    @PutMapping
+    public void actualizar(@RequestBody TipoPago tp){ pService.insert(tp);}
+
+    @PostMapping("/buscar")
+    public List<TipoPago> buscar(@RequestBody TipoPago p){
+        return pService.search(p.getTipo());
+    }
 }

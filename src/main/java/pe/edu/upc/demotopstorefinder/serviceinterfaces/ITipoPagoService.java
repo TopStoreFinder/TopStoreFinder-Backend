@@ -9,4 +9,8 @@ public interface ITipoPagoService {
     public void insert(TipoPago tipopago);
 
     List<TipoPago>list();
+
+    public void delete(int idTipo);
+
+    List<TipoPago>search(String categoriaNombre);
 }

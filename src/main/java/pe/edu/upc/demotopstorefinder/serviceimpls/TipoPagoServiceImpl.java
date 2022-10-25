@@ -22,4 +22,14 @@ public class TipoPagoServiceImpl implements ITipoPagoService {
     public List<TipoPago> list() {
         return pR.findAll();
     }
+
+    @Override
+    public void delete(int idTipo) {
+        pR.deleteById(idTipo);
+    }
+
+    @Override
+    public List<TipoPago> search(String tipo) {
+        return pR.buscarTipo(tipo);
+    }
 }
