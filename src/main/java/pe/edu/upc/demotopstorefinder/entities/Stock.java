@@ -12,7 +12,7 @@ public class Stock {
 
     @Column(name = "enStock",nullable = false)
     private int enStock;
-    @Column(name = "LastUpdateTime",length = 8,nullable = false)
+    @Column(name = "LastUpdateTime",length = 30,nullable = false)
     private String LastUpdateTime;
 
     public Stock() {

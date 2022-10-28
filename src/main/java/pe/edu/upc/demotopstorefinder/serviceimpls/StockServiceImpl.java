@@ -24,11 +24,12 @@ public class StockServiceImpl implements IStockService {
 
     @Override
     public void delete(int idStock) {
+        pR.deleteById(idStock);
 
     }
 
     @Override
     public List<Stock> search(String DateTime) {
-        return null;
+        return pR.buscarLastUpdateTime(DateTime);
     }
 }
