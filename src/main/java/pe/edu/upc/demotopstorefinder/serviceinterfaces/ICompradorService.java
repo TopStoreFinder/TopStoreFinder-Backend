@@ -11,4 +11,8 @@ public interface ICompradorService {
 
     List<Comprador>list();
 
+    public void delete(int idComprador);
+
+    List<Comprador>search(String nombre);
+
 }

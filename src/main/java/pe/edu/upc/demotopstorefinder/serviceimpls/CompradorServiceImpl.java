@@ -24,4 +24,13 @@ public class CompradorServiceImpl implements ICompradorService {
     public List<Comprador> list() {
         return pR.findAll();
     }
+
+    @Override
+    public void delete(int idComprador) {pR.deleteById(idComprador);}
+
+    @Override
+    public List<Comprador> search(String nombre) {
+
+        return pR.buscarNombre(nombre);
+    }
 }
