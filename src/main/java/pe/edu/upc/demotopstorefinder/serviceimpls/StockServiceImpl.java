@@ -21,4 +21,14 @@ public class StockServiceImpl implements IStockService {
     public List<Stock> list() {
         return pR.findAll();
     }
+
+    @Override
+    public void delete(int idStock) {
+
+    }
+
+    @Override
+    public List<Stock> search(String DateTime) {
+        return null;
+    }
 }
