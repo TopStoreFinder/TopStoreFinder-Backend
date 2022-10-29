@@ -22,4 +22,15 @@ public class DuenhoServiceImpl implements IDuenhoService {
     public List<Duenho> list() {
         return pR.findAll();
     }
+
+    @Override
+    public void delete(int idDuenho) {
+        pR.deleteById(idDuenho);
+
+    }
+
+    @Override
+    public List<Duenho> search(String categoriaNombre) {
+        return pR.buscarDuenho(categoriaNombre);
+    }
 }

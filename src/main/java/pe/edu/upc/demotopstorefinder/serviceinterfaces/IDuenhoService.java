@@ -9,4 +9,8 @@ public interface IDuenhoService {
     public void insert(Duenho duenho);
 
     List<Duenho> list();
+
+    public void delete (int idDuenho);
+
+    List<Duenho>search(String categoriaNombre);
 }
