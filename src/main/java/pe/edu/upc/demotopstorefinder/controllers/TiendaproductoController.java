@@ -33,8 +33,4 @@ public class TiendaproductoController {
         return tpService.listar();
     }
 
-    @PostMapping("/buscar")
-    public List<Tiendaproducto> buscar(@RequestBody Tiendaproducto t){
-        return tpService.buscarTiendaproducto(t.gettiendaid());
-    }
 }
