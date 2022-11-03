@@ -7,46 +7,46 @@ public class ReseniaCalificacion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="cantidadEstrellas", nullable = false)
-    private int cantidadEstrellas;
+    @Column(name="qEstrellas", nullable = false)
+    private int qEstrellas;
 
-    @Column(name="resenia", length = 100,nullable = false)
-    private String resenia;
-
-    @ManyToOne
-    @JoinColumn(name="clienteID",nullable = false)
-    private Comprador clienteID;
+    @Column(name="Resenia", length = 100,nullable = false)
+    private String Resenia;
 
     @ManyToOne
-    @JoinColumn(name="tiendaID",nullable = false)
-    private Tienda tiendaID;
+    @JoinColumn(name="Cliente_id",nullable = false)
+    private Comprador Cliente_id;
+
+    @ManyToOne
+    @JoinColumn(name="Tienda_id",nullable = false)
+    private Tienda Tienda_id;
 
     public int getId() {return id;}
 
     public void setId(int id) {this.id = id;}
 
-    public int getCantidadEstrellas() {return cantidadEstrellas;}
+    public int getCantidadEstrellas() {return qEstrellas;}
 
-    public void setCantidadEstrellas(int cantidadEstrellas) {this.cantidadEstrellas = cantidadEstrellas;}
+    public void setCantidadEstrellas(int qEstrellas) {this.qEstrellas = qEstrellas;}
 
-    public String getResenia() {return resenia;}
+    public String getResenia() {return Resenia;}
 
-    public void setResenia(String resenia) {this.resenia = resenia;}
+    public void setResenia(String Resenia) {this.Resenia = Resenia;}
 
-    public Comprador getClienteID() {return clienteID;}
+    public Comprador getClienteID() {return Cliente_id ;}
 
-    public void setClienteID(Comprador clienteID) {this.clienteID = clienteID;}
+    public void setClienteID(Comprador Cliente_id ) {this.Cliente_id = Cliente_id;}
 
-    public Tienda getTiendaID() {return tiendaID;}
+    public Tienda getTiendaID() {return Tienda_id;}
 
-    public void setTiendaID(Tienda tiendaID) {this.tiendaID = tiendaID;}
+    public void setTiendaID(Tienda Tienda_id) {this.Tienda_id = Tienda_id;}
 
     public ReseniaCalificacion(int id, String resenia, Comprador clienteID, Tienda tiendaID) {
         this.id = id;
-        this.cantidadEstrellas = cantidadEstrellas;
-        this.resenia = resenia;
-        this.clienteID = clienteID;
-        this.tiendaID = tiendaID;
+        this.qEstrellas = qEstrellas;
+        this.Resenia = Resenia;
+        this.Cliente_id = Cliente_id;
+        this.Tienda_id = Tienda_id;
     }
     public ReseniaCalificacion(){}
 }
