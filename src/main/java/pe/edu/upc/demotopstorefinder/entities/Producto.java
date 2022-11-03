@@ -17,8 +17,8 @@ public class Producto {
     private int precioUnidad;
 
     @ManyToOne
-    @JoinColumn(name = "id_tipoproducto",nullable = false)
-    private TipoProducto id_tipoproducto;
+    @JoinColumn(name = "categoriaProdcuto",nullable = false)
+    private TipoProducto categoriaProdcuto;
 
     @ManyToOne
     @JoinColumn(name = "id_Stock", nullable = false)
@@ -66,11 +66,11 @@ public class Producto {
     }
 
     public TipoProducto getId_tipoproducto() {
-        return id_tipoproducto;
+        return categoriaProdcuto;
     }
 
     public void setId_tipoproducto(TipoProducto id_tipoproducto) {
-        this.id_tipoproducto = id_tipoproducto;
+        this.categoriaProdcuto = id_tipoproducto;
     }
 
     public Stock getId_Stock() {
@@ -87,7 +87,7 @@ public class Producto {
         this.productoDescripcion = productoDescripcion;
         this.cantidad = cantidad;
         this.precioUnidad = precioUnidad;
-        this.id_tipoproducto = id_tipoproducto;
+        this.categoriaProdcuto = id_tipoproducto;
         this.id_Stock = id_Stock;
     }
 
