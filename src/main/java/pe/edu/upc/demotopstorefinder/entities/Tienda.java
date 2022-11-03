@@ -8,22 +8,18 @@ public class Tienda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name="nombreTienda", length = 100,nullable = false)
-    private String nombreTienda;
-    @Column(name="direccionTienda", length = 100,nullable = false)
-    private String direccionTienda;
-    @Column(name="resenia", length = 100,nullable = false)
-    private String resenia;
-    @Column(name="calificacion",nullable = false)
-    private int calificacion;
+    @Column(name="nombre", length = 100,nullable = false)
+    private String nombre;
+    @Column(name="direccion", length = 100,nullable = false)
+    private String direccion;
 
     @ManyToOne
-    @JoinColumn(name = "id_duenio",nullable = false)
-    private Duenho id_duenio;
+    @JoinColumn(name = "id_duenho",nullable = false)
+    private Duenho id_duenho;
 
     @ManyToOne
-    @JoinColumn(name = "id_tipopago", nullable = false)
-    private TipoPago id_tipopago;
+    @JoinColumn(name = "id_tipo_pago", nullable = false)
+    private TipoPago id_tipo_pago;
 
 
     public int getId() {
@@ -34,62 +30,44 @@ public class Tienda {
         this.id = id;
     }
 
-    public String getNombreTienda() {
-        return nombreTienda;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreTienda(String nombreTienda) {
-        this.nombreTienda = nombreTienda;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getDireccionTienda() {
-        return direccionTienda;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setDireccionTienda(String direccionTienda) {
-        this.direccionTienda = direccionTienda;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    public String getResenia() {
-        return resenia;
+    public Duenho getId_duenho() {
+        return id_duenho;
     }
 
-    public void setResenia(String resenia) {
-        this.resenia = resenia;
+    public void setId_duenho(Duenho id_duenho) {
+        this.id_duenho = id_duenho;
     }
 
-    public int getCalificacion() {
-        return calificacion;
+    public TipoPago getId_tipo_pago() {
+        return id_tipo_pago;
     }
 
-    public void setCalificacion(int calificacion) {
-        this.calificacion = calificacion;
+    public void setId_tipo_pago(TipoPago id_tipo_pago) {
+        this.id_tipo_pago = id_tipo_pago;
     }
 
-    public Duenho getId_duenio() {
-        return id_duenio;
-    }
-
-    public void setId_duenio(Duenho id_duenio) {
-        this.id_duenio = id_duenio;
-    }
-
-    public TipoPago getId_tipopago() {
-        return id_tipopago;
-    }
-
-    public void setId_tipopago(TipoPago id_tipopago) {
-        this.id_tipopago = id_tipopago;
-    }
-
-    public Tienda(int id, String nombreTienda, String direccionTienda, String resenia, int calificacion, Duenho id_duenio, TipoPago id_tipopago) {
+    public Tienda(int id, String nombre, String direccion, Duenho id_duenho, TipoPago id_tipo_pago) {
         this.id = id;
-        this.nombreTienda = nombreTienda;
-        this.direccionTienda = direccionTienda;
-        this.resenia = resenia;
-        this.calificacion = calificacion;
-        this.id_duenio = id_duenio;
-        this.id_tipopago = id_tipopago;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.id_duenho = id_duenho;
+        this.id_tipo_pago = id_tipo_pago;
     }
 
     public Tienda() {

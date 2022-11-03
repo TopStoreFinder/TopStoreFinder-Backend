@@ -15,5 +15,4 @@ public interface ITiendaproductoService {
 
     List<Tiendaproducto> listar();
 
-    List<Tiendaproducto> buscarTiendaproducto(String tiendaid);
 }

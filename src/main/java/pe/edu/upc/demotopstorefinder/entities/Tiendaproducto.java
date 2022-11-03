@@ -10,16 +10,15 @@ public class Tiendaproducto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "tiendaid",length = 20,nullable = false)
-    private String tiendaid;
 
-    public Tiendaproducto() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "tiendaid",nullable = false)
+    private Tienda tiendaid;
 
-    public Tiendaproducto(int id, String tiendaid) {
-        this.id = id;
-        this.tiendaid = tiendaid;
-    }
+    @ManyToOne
+    @JoinColumn(name = "productoid",nullable = false)
+    private Producto productoid;
+
     public int getId() {
         return id;
     }
@@ -28,11 +27,28 @@ public class Tiendaproducto {
         this.id = id;
     }
 
-    public String gettiendaid() {
+    public Tienda getTiendaid() {
         return tiendaid;
     }
 
-    public void settiendaid(String tiendaid) {
+    public void setTiendaid(Tienda tiendaid) {
         this.tiendaid = tiendaid;
+    }
+
+    public Producto getProductoid() {
+        return productoid;
+    }
+
+    public void setProductoid(Producto productoid) {
+        this.productoid = productoid;
+    }
+
+    public Tiendaproducto(int id, Tienda tiendaid, Producto productoid) {
+        this.id = id;
+        this.tiendaid = tiendaid;
+        this.productoid = productoid;
+    }
+
+    public Tiendaproducto() {
     }
 }
