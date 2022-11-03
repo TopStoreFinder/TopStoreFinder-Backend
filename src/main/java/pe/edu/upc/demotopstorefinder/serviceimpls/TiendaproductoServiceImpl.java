@@ -42,8 +42,4 @@ public class TiendaproductoServiceImpl implements ITiendaproductoService {
         return pR.findAll();
     }
 
-    @Override
-    public List<Tiendaproducto> buscarTiendaproducto(String tiendaid) {
-        return buscarTiendaproducto(tiendaid);
-    }
 }
