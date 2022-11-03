@@ -7,6 +7,7 @@ import pe.edu.upc.demotopstorefinder.entities.TipoPago;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.ITipoPagoService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/tipopago")
@@ -33,5 +34,10 @@ public class TipoPagoController {
     @PostMapping("/buscar")
     public List<TipoPago> buscar(@RequestBody TipoPago p){
         return pService.search(p.getTipo());
+    }
+
+    @GetMapping("/{id}")
+    public Optional<TipoPago> listarId(@PathVariable("id") Integer id) {
+        return pService.listarId(id);
     }
 }

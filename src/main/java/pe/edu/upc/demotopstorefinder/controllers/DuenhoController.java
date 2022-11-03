@@ -9,7 +9,7 @@ import pe.edu.upc.demotopstorefinder.serviceinterfaces.IDuenhoService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Duenho")
+@RequestMapping("/duenho")
 public class DuenhoController {
 
     @Autowired

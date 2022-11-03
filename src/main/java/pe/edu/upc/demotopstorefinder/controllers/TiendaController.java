@@ -8,6 +8,7 @@ import pe.edu.upc.demotopstorefinder.serviceinterfaces.ITiendaService;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/tienda")
@@ -39,5 +40,10 @@ public class TiendaController {
     @PostMapping("/buscar")
     public List<Tienda> buscar(@RequestBody Tienda t){
         return tService.buscarTienda(t.getNombre());
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Tienda> listarId(@PathVariable("id") Integer id) {
+        return tService.listarId(id);
     }
 }
