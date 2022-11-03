@@ -12,10 +12,6 @@ public class Tienda {
     private String nombreTienda;
     @Column(name="direccionTienda", length = 100,nullable = false)
     private String direccionTienda;
-    @Column(name="resenia", length = 100,nullable = false)
-    private String resenia;
-    @Column(name="calificacion",nullable = false)
-    private int calificacion;
 
     @ManyToOne
     @JoinColumn(name = "id_duenio",nullable = false)
@@ -50,22 +46,6 @@ public class Tienda {
         this.direccionTienda = direccionTienda;
     }
 
-    public String getResenia() {
-        return resenia;
-    }
-
-    public void setResenia(String resenia) {
-        this.resenia = resenia;
-    }
-
-    public int getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(int calificacion) {
-        this.calificacion = calificacion;
-    }
-
     public Duenho getId_duenio() {
         return id_duenio;
     }
@@ -82,12 +62,10 @@ public class Tienda {
         this.id_tipopago = id_tipopago;
     }
 
-    public Tienda(int id, String nombreTienda, String direccionTienda, String resenia, int calificacion, Duenho id_duenio, TipoPago id_tipopago) {
+    public Tienda(int id, String nombreTienda, String direccionTienda, Duenho id_duenio, TipoPago id_tipopago) {
         this.id = id;
         this.nombreTienda = nombreTienda;
         this.direccionTienda = direccionTienda;
-        this.resenia = resenia;
-        this.calificacion = calificacion;
         this.id_duenio = id_duenio;
         this.id_tipopago = id_tipopago;
     }
