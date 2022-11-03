@@ -38,6 +38,6 @@ public class TiendaController {
 
     @PostMapping("/buscar")
     public List<Tienda> buscar(@RequestBody Tienda t){
-        return tService.buscarTienda(t.getNombreTienda());
+        return tService.buscarTienda(t.getNombre());
     }
 }

@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface ITiendaRepository extends JpaRepository<Tienda,Integer> {
 
-    @Query("from Tienda t where lower(t.nombreTienda) like lower(concat('%', :nombre,'%'))")
+    @Query("from Tienda t where lower(t.nombre) like lower(concat('%', :nombre,'%'))")
     List<Tienda> buscarTienda(@Param("nombre") String nombre);
 
 }
