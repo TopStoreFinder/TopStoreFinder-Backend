@@ -3,10 +3,12 @@ package pe.edu.upc.demotopstorefinder.serviceimpls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.demotopstorefinder.entities.Duenho;
+import pe.edu.upc.demotopstorefinder.entities.Tienda;
 import pe.edu.upc.demotopstorefinder.repositories.IDuenhoRepository;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.IDuenhoService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DuenhoServiceImpl implements IDuenhoService {
@@ -32,5 +34,10 @@ public class DuenhoServiceImpl implements IDuenhoService {
     @Override
     public List<Duenho> search(String categoriaNombre) {
         return pR.buscarDuenho(categoriaNombre);
+    }
+
+    @Override
+    public Optional<Duenho> listarId(int idduenho) {
+        return pR.findById(idduenho);
     }
 }
