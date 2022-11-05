@@ -3,10 +3,12 @@ package pe.edu.upc.demotopstorefinder.serviceimpls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.demotopstorefinder.entities.Comprador;
+import pe.edu.upc.demotopstorefinder.entities.Tienda;
 import pe.edu.upc.demotopstorefinder.repositories.ICompradorRepository;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.ICompradorService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CompradorServiceImpl implements ICompradorService {
@@ -32,5 +34,10 @@ public class CompradorServiceImpl implements ICompradorService {
     public List<Comprador> search(String nombre) {
 
         return pR.buscarNombre(nombre);
+    }
+
+    @Override
+    public Optional<Comprador> listarId(int idComprador) {
+        return pR.findById(idComprador);
     }
 }

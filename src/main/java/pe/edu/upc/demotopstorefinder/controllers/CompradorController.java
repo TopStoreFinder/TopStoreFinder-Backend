@@ -4,9 +4,11 @@ package pe.edu.upc.demotopstorefinder.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.demotopstorefinder.entities.Comprador;
+import pe.edu.upc.demotopstorefinder.entities.Tienda;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.ICompradorService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/comprador")
@@ -33,5 +35,10 @@ public class CompradorController {
     @PostMapping("/buscar")
     public List<Comprador> buscar(@RequestBody Comprador p){
         return pService.search(p.getNombre());
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Comprador> listarId(@PathVariable("id") Integer id) {
+        return pService.listarId(id);
     }
 }

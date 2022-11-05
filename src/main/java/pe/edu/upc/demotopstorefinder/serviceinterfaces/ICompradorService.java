@@ -2,8 +2,10 @@ package pe.edu.upc.demotopstorefinder.serviceinterfaces;
 
 
 import pe.edu.upc.demotopstorefinder.entities.Comprador;
+import pe.edu.upc.demotopstorefinder.entities.Tienda;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICompradorService {
 
@@ -14,5 +16,7 @@ public interface ICompradorService {
     public void delete(int idComprador);
 
     List<Comprador>search(String nombre);
+
+    Optional<Comprador> listarId(int idComprador);
 
 }
