@@ -15,6 +15,8 @@ public interface ITiendaService {
     List<Tienda> listar();
 
     List<Tienda> buscarTienda(String nombreTienda);
+
+    List<Tienda> buscarDuenho(String nombreDuenho);
 }
 
 

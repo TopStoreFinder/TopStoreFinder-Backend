@@ -45,6 +45,11 @@ public class TiendaServiceImpl implements ITiendaService {
 
     @Override
     public List<Tienda> buscarTienda(String nombreTienda) {
-        return buscarTienda(nombreTienda);
+        return dTienda.buscarTienda(nombreTienda);
+    }
+
+    @Override
+    public List<Tienda> buscarDuenho(String nombreDuenho) {
+        return dTienda.BuscarDuenho(nombreDuenho);
     }
 }
