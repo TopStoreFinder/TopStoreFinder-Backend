@@ -8,6 +8,7 @@ import pe.edu.upc.demotopstorefinder.serviceinterfaces.IReseniaCalificacionServi
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/reseniacalificacion")
@@ -39,5 +40,10 @@ public class ReseniaCalificacionController {
     @PostMapping("/buscar")
     public List<ReseniaCalificacion> buscar(@RequestBody ReseniaCalificacion r){
         return rService.buscarResenia(r.getResenia());
+    }
+
+    @GetMapping("/{id}")
+    public Optional<ReseniaCalificacion> listarId(@PathVariable("id") Integer id) {
+        return rService.listarId(id);
     }
 }
