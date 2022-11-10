@@ -40,7 +40,7 @@ public class TiendaController {
     @PostMapping("/buscar")
     public List<Tienda> buscar(@RequestBody String nombre) throws ParseException{
         List<Tienda>listaTienda;
-        listaTienda = tService.buscarDuenho(nombre);
+        listaTienda = tService.buscarTienda(nombre);
         return listaTienda;
     }
 
