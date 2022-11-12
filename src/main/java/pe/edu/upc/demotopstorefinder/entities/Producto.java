@@ -12,7 +12,7 @@ public class Producto {
     @Column(name="productoDescripcion", length = 100,nullable = false)
     private String productoDescripcion;
     @Column(name="cantidad", length = 100,nullable = false)
-    private String cantidad;
+    private int cantidad;
     @Column(name="precioUnidad",nullable = false)
     private int precioUnidad;
 
@@ -49,11 +49,11 @@ public class Producto {
         this.productoDescripcion = productoDescripcion;
     }
 
-    public String getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(String cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
@@ -81,7 +81,7 @@ public class Producto {
         this.id_Stock = id_Stock;
     }
 
-    public Producto(int id, String nombreProducto, String productoDescripcion, String cantidad, int precioUnidad, TipoProducto id_tipoproducto, Stock id_Stock) {
+    public Producto(int id, String nombreProducto, String productoDescripcion, int cantidad, int precioUnidad, TipoProducto id_tipoproducto, Stock id_Stock) {
         this.id = id;
         this.nombreProducto = nombreProducto;
         this.productoDescripcion = productoDescripcion;

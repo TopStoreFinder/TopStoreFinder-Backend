@@ -13,7 +13,7 @@ public class Tiendaproducto {
 
     @ManyToOne
     @JoinColumn(name = "tienda_id",nullable = false)
-    private Tienda tienda_id;
+    private Tienda tiendaid;
 
     @ManyToOne
     @JoinColumn(name = "productoid",nullable = false)
@@ -28,11 +28,11 @@ public class Tiendaproducto {
     }
 
     public Tienda getTiendaid() {
-        return tienda_id;
+        return tiendaid;
     }
 
     public void setTiendaid(Tienda tiendaid) {
-        this.tienda_id = tiendaid;
+        this.tiendaid = tiendaid;
     }
 
     public Producto getProductoid() {
@@ -45,7 +45,7 @@ public class Tiendaproducto {
 
     public Tiendaproducto(int id, Tienda tiendaid, Producto productoid) {
         this.id = id;
-        this.tienda_id = tiendaid;
+        this.tiendaid = tiendaid;
         this.productoid = productoid;
     }
 
