@@ -31,8 +31,5 @@ public class StockController {
     @PutMapping
     public void actualizar(@RequestBody Stock s){ sService.insert(s);}
 
-    @PostMapping("/buscar")
-    public List<Stock> buscar(@RequestBody Stock p){
-        return sService.search(p.getLastUpdateTime());
-    }
+
 }
