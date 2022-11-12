@@ -9,11 +9,11 @@ public class compradorUbicacion {
 
     @ManyToOne
     @JoinColumn(name = "clienteid",nullable = false)
-    private Duenho clienteid;
+    private Comprador clienteid;
 
     @ManyToOne
     @JoinColumn(name = "ubicacionid",nullable = false)
-    private Duenho ubicacionid;
+    private Ubicacion ubicacionid;
 
 
     public int getId() {
@@ -24,23 +24,23 @@ public class compradorUbicacion {
         this.id = id;
     }
 
-    public Duenho getClienteid() {
+    public Comprador getClienteid() {
         return clienteid;
     }
 
-    public void setClienteid(Duenho clienteid) {
+    public void setClienteid(Comprador clienteid) {
         this.clienteid = clienteid;
     }
 
-    public Duenho getUbicacionid() {
+    public Ubicacion getUbicacionid() {
         return ubicacionid;
     }
 
-    public void setUbicacionid(Duenho ubicacionid) {
+    public void setUbicacionid(Ubicacion ubicacionid) {
         this.ubicacionid = ubicacionid;
     }
 
-    public compradorUbicacion(int id, Duenho clienteid, Duenho ubicacionid) {
+    public compradorUbicacion(int id, Comprador clienteid, Ubicacion ubicacionid) {
         this.id = id;
         this.clienteid = clienteid;
         this.ubicacionid = ubicacionid;
