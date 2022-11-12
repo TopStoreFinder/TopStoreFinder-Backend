@@ -3,11 +3,8 @@ package pe.edu.upc.demotopstorefinder.serviceimpls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pe.edu.upc.demotopstorefinder.entities.Comprador;
-import pe.edu.upc.demotopstorefinder.entities.Tienda;
 import pe.edu.upc.demotopstorefinder.entities.compradorUbicacion;
 import pe.edu.upc.demotopstorefinder.repositories.ICompradorUbicacionRepository;
-import pe.edu.upc.demotopstorefinder.serviceinterfaces.ICompradorService;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.ICompradorUbicacionService;
 
 import java.util.List;
