@@ -11,5 +11,5 @@ import java.util.List;
 public interface IReseniaCalificacionRepository extends JpaRepository<ReseniaCalificacion,Integer >{
 
     @Query("from ReseniaCalificacion r where lower(r.Resenia) like lower(concat('%', :resenia,'%'))")
-    List<Tienda> buscarReseniaCalificacion(@Param("resenia") String resenia);
+    List<ReseniaCalificacion> buscarReseniaCalificacion(@Param("resenia") String resenia);
 }
