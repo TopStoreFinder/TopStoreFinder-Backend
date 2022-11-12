@@ -9,13 +9,11 @@ import java.util.Optional;
 
 public interface IStockService {
 
-    public boolean insertar(Stock tienda);
+    public void insertar(Stock tienda);
 
     List<Stock>list();
 
     public void eliminar(int idTienda);
-
-    List<Stock>search(String DateTime);
 
     Optional<Stock> listarId(int idstock);
 
