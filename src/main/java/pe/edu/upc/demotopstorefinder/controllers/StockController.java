@@ -19,7 +19,7 @@ public class StockController {
 
     @PostMapping
     public void registrar(@RequestBody Stock s){
-        sService.insert(s);
+        sService.insertar(s);
     }
 
     @GetMapping
@@ -28,10 +28,10 @@ public class StockController {
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id") Integer id){ sService.delete(id);}
+    public void eliminar(@PathVariable("id") Integer id){ sService.eliminar(id);}
 
     @PutMapping
-    public void actualizar(@RequestBody Stock s){ sService.insert(s);}
+    public void actualizar(@RequestBody Stock s){ sService.insertar(s);}
 
     @GetMapping("/{id}")
     public Optional<Stock> listarId(@PathVariable("id") Integer id) {

@@ -2,6 +2,7 @@ package pe.edu.upc.demotopstorefinder.serviceimpls;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pe.edu.upc.demotopstorefinder.entities.Stock;
 import pe.edu.upc.demotopstorefinder.entities.Tienda;
 import pe.edu.upc.demotopstorefinder.repositories.IStockRepository;
@@ -15,8 +16,13 @@ public class StockServiceImpl implements IStockService {
     @Autowired
     private IStockRepository pR;
     @Override
-    public void insert(Stock stock) {
-        pR.save(stock);
+    @Transactional
+    public boolean insertar(Stock tienda) {
+        Stock objTienda = pR.save(tienda);
+        if (objTienda == null){
+            return false;}
+        else{
+            return true;}
     }
 
     @Override
@@ -25,8 +31,9 @@ public class StockServiceImpl implements IStockService {
     }
 
     @Override
-    public void delete(int idStock) {
-        pR.deleteById(idStock);
+    @Transactional
+    public void eliminar(int idTienda) {
+        pR.deleteById(idTienda);
 
     }
 
