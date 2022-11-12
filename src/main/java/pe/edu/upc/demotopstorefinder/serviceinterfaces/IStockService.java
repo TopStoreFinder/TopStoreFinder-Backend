@@ -13,5 +13,5 @@ public interface IStockService {
 
     public void delete(int idStock);
 
-
+    List<Stock>search(String DateTime);
 }

@@ -28,4 +28,8 @@ public class StockServiceImpl implements IStockService {
 
     }
 
+    @Override
+    public List<Stock> search(String DateTime) {
+        return pR.buscarLastUpdateTime(DateTime);
+    }
 }

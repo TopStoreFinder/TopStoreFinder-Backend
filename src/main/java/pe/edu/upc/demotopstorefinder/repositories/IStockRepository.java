@@ -10,4 +10,6 @@ import java.util.List;
 
 @Repository
 public interface IStockRepository extends JpaRepository<Stock,Integer> {
+    @Query("from Stock s where lower(s.LastUpdateTime) like lower(concat('%', :DateTime,'%'))")//PERSONALIZA LA BUSQUEDA DE JPQL
+    List<Stock> buscarLastUpdateTime(@Param("DateTime") String DateTime);
 }

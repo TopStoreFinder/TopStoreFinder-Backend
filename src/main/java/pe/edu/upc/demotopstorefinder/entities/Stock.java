@@ -1,10 +1,6 @@
 package pe.edu.upc.demotopstorefinder.entities;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
-
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "Stock")
@@ -16,14 +12,13 @@ public class Stock {
 
     @Column(name = "enStock",nullable = false)
     private int enStock;
-    @Column(name = "LastUpdateTime")
-    @JsonSerialize(using = ToStringSerializer.class)
-    private LocalDate LastUpdateTime;
+    @Column(name = "LastUpdateTime",length = 30,nullable = false)
+    private String LastUpdateTime;
 
     public Stock() {
     }
 
-    public Stock(int id, int enStock, LocalDate lastUpdateTime) {
+    public Stock(int id, int enStock, String lastUpdateTime) {
         this.id = id;
         this.enStock = enStock;
         LastUpdateTime = lastUpdateTime;
@@ -45,11 +40,11 @@ public class Stock {
         this.enStock = enStock;
     }
 
-    public LocalDate ObtenerLastUpdateTime() {
+    public String getLastUpdateTime() {
         return LastUpdateTime;
     }
 
-    public void setLastUpdateTime(LocalDate lastUpdateTime) {
+    public void setLastUpdateTime(String lastUpdateTime) {
         LastUpdateTime = lastUpdateTime;
     }
 }
