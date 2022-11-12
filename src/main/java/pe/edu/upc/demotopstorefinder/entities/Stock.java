@@ -12,8 +12,8 @@ public class Stock {
 
     @Column(name = "enStock",nullable = false)
     private int enStock;
-    @Column(name = "LastUpdateTime",length = 30,nullable = false)
-    private String LastUpdateTime;
+    @Column(name = "fecha",length = 30,nullable = false)
+    private String fecha;
 
     public Stock() {
     }
@@ -21,7 +21,7 @@ public class Stock {
     public Stock(int id, int enStock, String lastUpdateTime) {
         this.id = id;
         this.enStock = enStock;
-        LastUpdateTime = lastUpdateTime;
+        fecha = lastUpdateTime;
     }
 
     public int getId() {
@@ -41,10 +41,10 @@ public class Stock {
     }
 
     public String getLastUpdateTime() {
-        return LastUpdateTime;
+        return fecha;
     }
 
-    public void setLastUpdateTime(String lastUpdateTime) {
-        LastUpdateTime = lastUpdateTime;
+    public void setLastUpdateTime(String fechaa) {
+        fecha = fechaa;
     }
 }
