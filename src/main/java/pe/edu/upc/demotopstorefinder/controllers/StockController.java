@@ -3,11 +3,13 @@ package pe.edu.upc.demotopstorefinder.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.demotopstorefinder.entities.Stock;
+import pe.edu.upc.demotopstorefinder.entities.Tienda;
 import pe.edu.upc.demotopstorefinder.entities.TipoPago;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.IStockService;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.ITipoPagoService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/stock")
@@ -31,5 +33,8 @@ public class StockController {
     @PutMapping
     public void actualizar(@RequestBody Stock s){ sService.insert(s);}
 
-
+    @GetMapping("/{id}")
+    public Optional<Stock> listarId(@PathVariable("id") Integer id) {
+        return sService.listarId(id);
+    }
 }
