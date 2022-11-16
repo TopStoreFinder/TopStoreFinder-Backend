@@ -6,6 +6,7 @@ import pe.edu.upc.demotopstorefinder.entities.Producto;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.IProductoService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/producto")
@@ -36,5 +37,10 @@ public class ProductoController {
     @PostMapping("/buscar")
     public List<Producto> buscar(@RequestBody Producto t){
         return pService.buscarProducto(t.getNombreProducto());
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Producto> listarId(@PathVariable("id") Integer id) {
+        return pService.listarId(id);
     }
 }
