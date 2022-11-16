@@ -6,6 +6,7 @@ import pe.edu.upc.demotopstorefinder.entities.Tiendaproducto;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.ITiendaproductoService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/tiendaproducto")
@@ -33,4 +34,8 @@ public class TiendaproductoController {
         return tpService.listar();
     }
 
+    @GetMapping("/{id}")
+    public Optional<Tiendaproducto> listarId(@PathVariable("id") Integer id) {
+        return tpService.listarId(id);
+    }
 }
