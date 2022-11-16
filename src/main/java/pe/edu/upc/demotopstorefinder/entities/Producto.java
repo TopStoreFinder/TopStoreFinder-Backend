@@ -7,12 +7,13 @@ public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @Column(name="nombreProducto", length = 100,nullable = false)
     private String nombreProducto;
+
     @Column(name="productoDescripcion", length = 100,nullable = false)
     private String productoDescripcion;
-    @Column(name="cantidad", length = 100,nullable = false)
-    private int cantidad;
+
     @Column(name="precioUnidad",nullable = false)
     private int precioUnidad;
 
@@ -24,6 +25,17 @@ public class Producto {
     @JoinColumn(name = "id_Stock", nullable = false)
     private Stock id_Stock;
 
+    public Producto(int id, String nombreProducto, String productoDescripcion, int precioUnidad, TipoProducto categoriaProdcuto, Stock id_Stock) {
+        this.id = id;
+        this.nombreProducto = nombreProducto;
+        this.productoDescripcion = productoDescripcion;
+        this.precioUnidad = precioUnidad;
+        this.categoriaProdcuto = categoriaProdcuto;
+        this.id_Stock = id_Stock;
+    }
+
+    public Producto() {
+    }
 
     public int getId() {
         return id;
@@ -49,14 +61,6 @@ public class Producto {
         this.productoDescripcion = productoDescripcion;
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
     public int getPrecioUnidad() {
         return precioUnidad;
     }
@@ -65,12 +69,12 @@ public class Producto {
         this.precioUnidad = precioUnidad;
     }
 
-    public TipoProducto getId_tipoproducto() {
+    public TipoProducto getCategoriaProdcuto() {
         return categoriaProdcuto;
     }
 
-    public void setId_tipoproducto(TipoProducto id_tipoproducto) {
-        this.categoriaProdcuto = id_tipoproducto;
+    public void setCategoriaProdcuto(TipoProducto categoriaProdcuto) {
+        this.categoriaProdcuto = categoriaProdcuto;
     }
 
     public Stock getId_Stock() {
@@ -79,18 +83,5 @@ public class Producto {
 
     public void setId_Stock(Stock id_Stock) {
         this.id_Stock = id_Stock;
-    }
-
-    public Producto(int id, String nombreProducto, String productoDescripcion, int cantidad, int precioUnidad, TipoProducto id_tipoproducto, Stock id_Stock) {
-        this.id = id;
-        this.nombreProducto = nombreProducto;
-        this.productoDescripcion = productoDescripcion;
-        this.cantidad = cantidad;
-        this.precioUnidad = precioUnidad;
-        this.categoriaProdcuto = id_tipoproducto;
-        this.id_Stock = id_Stock;
-    }
-
-    public Producto() {
     }
 }
