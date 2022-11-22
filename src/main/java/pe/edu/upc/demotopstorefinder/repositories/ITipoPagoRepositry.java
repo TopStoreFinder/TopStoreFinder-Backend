@@ -13,4 +13,7 @@ public interface ITipoPagoRepositry extends JpaRepository<TipoPago,Integer> {
 
     @Query("from TipoPago tp where lower(tp.tipo) like lower(concat('%', :tipoPago,'%'))")//PERSONALIZA LA BUSQUEDA DE JPQL
     List<TipoPago> buscarTipo(@Param("tipoPago") String tipoPago);
+
+    @Query(value ="SELECT tp.tipo as TipoPago, count(t.id_tipo_pago) as cantidadTiendas from tipo_pago tp inner join tienda t on tp.id = t.id_tipo_pago group by tp.tipo" ,nativeQuery = true)
+    List<String[]> BuscarCantidadTiendasPorTipoPago();
 }
