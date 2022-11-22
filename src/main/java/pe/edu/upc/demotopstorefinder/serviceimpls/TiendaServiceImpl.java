@@ -3,10 +3,13 @@ package pe.edu.upc.demotopstorefinder.serviceimpls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pe.edu.upc.demotopstorefinder.entities.ResultadoCantidadTiendasPorCadaDuenho;
+import pe.edu.upc.demotopstorefinder.entities.ResultadoTIendasPorTipoPago;
 import pe.edu.upc.demotopstorefinder.entities.Tienda;
 import pe.edu.upc.demotopstorefinder.repositories.ITiendaRepository;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.ITiendaService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,7 +52,19 @@ public class TiendaServiceImpl implements ITiendaService {
     }
 
     @Override
-    public List<Tienda> buscarDuenho(String nombreDuenho) {
-        return dTienda.BuscarDuenho(nombreDuenho);
+    public List<ResultadoCantidadTiendasPorCadaDuenho> buscarCantidadTiendasPorCadaDuenho() {
+        List<ResultadoCantidadTiendasPorCadaDuenho> lista = new ArrayList<>();
+        dTienda.BuscarCantidadTiendasPorCadaDuenho().forEach( y -> {
+            ResultadoCantidadTiendasPorCadaDuenho re = new ResultadoCantidadTiendasPorCadaDuenho();
+            re.setNombre(y[0]);
+            re.setEdad(y[1]);
+            re.setCantidad(y[2]);
+            lista.add(re);
+        });
+
+
+        return lista;
     }
+
+
 }

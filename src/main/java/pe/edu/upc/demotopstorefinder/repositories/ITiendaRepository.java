@@ -14,6 +14,6 @@ public interface ITiendaRepository extends JpaRepository<Tienda,Integer> {
     @Query("from Tienda t where lower(t.nombre) like lower(concat('%', :nombre,'%'))")
     List<Tienda> buscarTienda(@Param("nombre") String nombre);
 
-    @Query("from Tienda t where t.id_duenho.nombre like %:nombre%")
-    List<Tienda> BuscarDuenho(@Param("nombre") String nombre);
+    @Query(value ="SELECT d.nombre,d.edad,count(t.id_duenho) from tienda t inner join duenho d ON d.id = t.id_duenho where d.edad>40 GROUP by  (d.nombre,d.edad)" ,nativeQuery = true)
+    List<String[]> BuscarCantidadTiendasPorCadaDuenho();
 }

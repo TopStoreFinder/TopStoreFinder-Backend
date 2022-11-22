@@ -1,5 +1,6 @@
 package pe.edu.upc.demotopstorefinder.serviceinterfaces;
 
+import pe.edu.upc.demotopstorefinder.entities.ResultadoCantidadTiendasPorCadaDuenho;
 import pe.edu.upc.demotopstorefinder.entities.Tienda;
 
 import java.util.List;
@@ -16,7 +17,8 @@ public interface ITiendaService {
 
     List<Tienda> buscarTienda(String nombreTienda);
 
-    List<Tienda> buscarDuenho(String nombreDuenho);
+    List<ResultadoCantidadTiendasPorCadaDuenho> buscarCantidadTiendasPorCadaDuenho();
+
 }
 
 

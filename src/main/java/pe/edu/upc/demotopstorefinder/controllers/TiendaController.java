@@ -2,6 +2,8 @@ package pe.edu.upc.demotopstorefinder.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.demotopstorefinder.entities.ResultadoCantidadTiendasPorCadaDuenho;
+import pe.edu.upc.demotopstorefinder.entities.ResultadoTIendasPorTipoPago;
 import pe.edu.upc.demotopstorefinder.entities.Tienda;
 import pe.edu.upc.demotopstorefinder.entities.TipoPago;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.ITiendaService;
@@ -47,5 +49,11 @@ public class TiendaController {
     @GetMapping("/{id}")
     public Optional<Tienda> listarId(@PathVariable("id") Integer id) {
         return tService.listarId(id);
+    }
+
+    @GetMapping("/buscarcantidadtiendasporcadaduenho")
+
+    public List<ResultadoCantidadTiendasPorCadaDuenho> BuscarCantidadTiendasPorCadaDuenho(){
+        return tService.buscarCantidadTiendasPorCadaDuenho();
     }
 }
