@@ -4,10 +4,13 @@ package pe.edu.upc.demotopstorefinder.serviceimpls;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.demotopstorefinder.entities.Producto;
+import pe.edu.upc.demotopstorefinder.entities.ResultadoCantidadProductosporcadaTienda;
+import pe.edu.upc.demotopstorefinder.entities.ResultadoTIendasPorTipoPago;
 import pe.edu.upc.demotopstorefinder.repositories.IProductoRepository;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.IProductoService;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,5 +48,18 @@ public class ProductoServiceImpl implements IProductoService {
     @Override
     public List<Producto> buscarProducto(String NombreProducto) {
         return buscarProducto(NombreProducto);
+    }
+    @Override
+    public List<ResultadoCantidadProductosporcadaTienda> BuscarCantidadProductosPorTienda() {
+        List<ResultadoCantidadProductosporcadaTienda> lista = new ArrayList<>();
+        pProducto.BuscarCantidadProductosPorTienda().forEach( y -> {
+            ResultadoCantidadProductosporcadaTienda re = new ResultadoCantidadProductosporcadaTienda();
+            re.setCategorianombre(y[0]);
+            re.setCantidad(y[1]);
+            lista.add(re);
+        });
+
+
+        return lista;
     }
 }
