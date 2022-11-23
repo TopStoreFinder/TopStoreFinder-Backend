@@ -16,5 +16,6 @@ public interface IStockService {
     Optional<Stock> listarId(int idstock);
 
     List<ResultadoStockPorProducto> BuscarStockPorProducto();
+    List<ResultadoStockPorProducto> MostrarStockPorProductoMenor50();
 
 }
