@@ -40,4 +40,8 @@ public class StockController {
     public List<ResultadoStockPorProducto> BuscarStockPorProducto(){
         return sService.BuscarStockPorProducto();
     }
+
+    @GetMapping("/buscarstockporproductomenor50")
+    public List<ResultadoStockPorProducto> BuscarStockPorProductoMenor50(){return sService.MostrarStockPorProductoMenor50();
+    }
 }
