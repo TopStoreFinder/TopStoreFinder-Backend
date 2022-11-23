@@ -43,12 +43,5 @@ public class ProductoController {
     public Optional<Producto> listarId(@PathVariable("id") Integer id) {
         return pService.listarId(id);
     }
-<<<<<<< HEAD
 
-    @GetMapping("/buscarcantidadtiendasporproducto")
-    public List<ResultadoCantidadProductosporcadaTienda> ResultadoCantidadProductosporcadaTienda(){
-       return pService.BuscarCantidadProductosPorTienda();
-    }
-=======
->>>>>>> parent of 4b04742 (QUERY DE CANTIDAD DE PRODUCTOS EN TIENDAS)
 }
