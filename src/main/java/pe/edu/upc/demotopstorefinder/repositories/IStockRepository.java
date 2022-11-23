@@ -11,4 +11,8 @@ import java.util.List;
 @Repository
 public interface IStockRepository extends JpaRepository<Stock,Integer> {
 
+
+    @Query(value ="select p.nombre_producto,s.en_stock from producto p inner join stock s on p.id_stock = s.id" ,nativeQuery = true)
+    List<String[]> MostrarStockPorProducto();
+
 }
