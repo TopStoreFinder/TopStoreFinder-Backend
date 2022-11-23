@@ -1,7 +1,6 @@
 package pe.edu.upc.demotopstorefinder.serviceinterfaces;
 
 import pe.edu.upc.demotopstorefinder.entities.ResultadoTIendasPorTipoPago;
-import pe.edu.upc.demotopstorefinder.entities.Tienda;
 import pe.edu.upc.demotopstorefinder.entities.TipoPago;
 
 import java.util.List;

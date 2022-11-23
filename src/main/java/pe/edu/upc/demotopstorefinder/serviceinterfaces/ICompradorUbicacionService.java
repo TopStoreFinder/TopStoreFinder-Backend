@@ -1,5 +1,6 @@
 package pe.edu.upc.demotopstorefinder.serviceinterfaces;
 
+import pe.edu.upc.demotopstorefinder.entities.ResultadoCantidadLongitudesDeterminadas;
 import pe.edu.upc.demotopstorefinder.entities.compradorUbicacion;
 
 import java.util.List;
@@ -14,5 +15,7 @@ public interface ICompradorUbicacionService {
     Optional<compradorUbicacion> listarId(int idTienda);
 
     List<compradorUbicacion> listar();
+
+    List<ResultadoCantidadLongitudesDeterminadas> BuscarCantidadLongitudesDeterminadas();
 
 }
