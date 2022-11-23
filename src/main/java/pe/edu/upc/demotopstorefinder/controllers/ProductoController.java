@@ -53,4 +53,5 @@ public class ProductoController {
     @GetMapping("/buscarcantidadtiendasporproducto")
     public List<ResultadoCantidadProductosporcadaTienda> ResultadoCantidadProductosporcadaTienda(){
        return pService.BuscarCantidadProductosPorTienda();
+    }
 }
