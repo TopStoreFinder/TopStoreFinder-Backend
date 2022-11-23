@@ -1,32 +1,30 @@
 package pe.edu.upc.demotopstorefinder.entities;
 
 public class ResultadoStockPorProducto {
-    private String Nombre;
-    private String Cantidad;
+    private String nombre;
+    private String cantidad;
 
     public ResultadoStockPorProducto() {
     }
 
     public ResultadoStockPorProducto(String nombre, String cantidad) {
-        Nombre = nombre;
-        Cantidad = cantidad;
+        this.nombre = nombre;
+        this.cantidad = cantidad;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getCantidad() {
-        return Cantidad;
+        return cantidad;
     }
 
     public void setCantidad(String cantidad) {
-        Cantidad = cantidad;
+        this.cantidad = cantidad;
     }
-
-
 }
