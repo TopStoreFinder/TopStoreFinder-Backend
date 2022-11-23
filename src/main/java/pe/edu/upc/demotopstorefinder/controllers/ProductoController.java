@@ -54,4 +54,3 @@ public class ProductoController {
     public List<ResultadoCantidadProductosporcadaTienda> ResultadoCantidadProductosporcadaTienda(){
        return pService.BuscarCantidadProductosPorTienda();
 }
-}
