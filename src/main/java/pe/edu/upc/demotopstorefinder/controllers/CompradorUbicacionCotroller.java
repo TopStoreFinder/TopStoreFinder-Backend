@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.demotopstorefinder.entities.compradorUbicacion;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.ICompradorUbicacionService;
+import pe.edu.upc.demotopstorefinder.entities.ResultadoCantidadLongitudesDeterminadas;
 
 
 import java.text.ParseException;
@@ -40,5 +41,10 @@ public class CompradorUbicacionCotroller {
     @GetMapping("/{id}")
     public Optional<compradorUbicacion> listarId(@PathVariable("id") Integer id) {
         return tService.listarId(id);
+    }
+
+    @GetMapping("/buscarcantidadlongitudDeterminada")
+    public List<ResultadoCantidadLongitudesDeterminadas> BuscarCantidadLongitudesDeterminadas(){
+        return tService.BuscarCantidadLongitudesDeterminadas();
     }
 }
