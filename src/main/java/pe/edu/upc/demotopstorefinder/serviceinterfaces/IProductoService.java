@@ -18,4 +18,5 @@ public interface IProductoService {
     List<Producto> buscarProducto(String NombreProducto);
 
     List<ResultadoCantidadProductosporcadaTienda> BuscarCantidadProductosPorTienda();
+
 }

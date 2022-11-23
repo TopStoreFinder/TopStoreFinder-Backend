@@ -25,6 +25,7 @@ public class Producto {
     @JoinColumn(name = "id_Stock", nullable = false)
     private Stock id_Stock;
 
+
     public Producto(int id, String nombreProducto, String productoDescripcion, int precioUnidad, TipoProducto categoriaProdcuto, Stock id_Stock) {
         this.id = id;
         this.nombreProducto = nombreProducto;

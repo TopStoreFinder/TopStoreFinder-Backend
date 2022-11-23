@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface IProductoRepository extends JpaRepository <Producto, Integer> {
 
+
     @Query("from Producto t where lower(t.nombreProducto) like lower(concat('%', :nombreProducto,'%'))")
     List<Producto> buscarProducto(@Param("nombreProducto") String nombreProducto);
 
