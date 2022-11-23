@@ -47,4 +47,17 @@ public class StockServiceImpl implements IStockService {
 
         return lista;
     }
+
+    @Override
+    public List<ResultadoStockPorProducto> MostrarStockPorProductoMenor50() {List<ResultadoStockPorProducto> lista = new ArrayList<>();
+        pR.MostrarStockPorProductoMenor50().forEach( y -> {
+            ResultadoStockPorProducto re = new ResultadoStockPorProducto();
+            re.setNombre(y[0]);
+            re.setCantidad( y[1]);
+            lista.add(re);
+        });
+
+
+        return lista;
+    }
 }
