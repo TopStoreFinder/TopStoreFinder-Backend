@@ -17,4 +17,6 @@ public interface IDuenhoService {
     List<Duenho>search(String categoriaNombre);
 
     Optional<Duenho> listarId(int idduenho);
+
+    List<Duenho>buscarEdadDuenho();
 }

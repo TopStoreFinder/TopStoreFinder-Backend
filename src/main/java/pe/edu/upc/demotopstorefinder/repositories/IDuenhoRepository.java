@@ -12,4 +12,7 @@ import java.util.List;
 public interface IDuenhoRepository extends JpaRepository<Duenho,Integer> {
     @Query("from Duenho tp where lower(tp.nombre) like lower(concat('%', :Duenho,'%'))")
     List<Duenho> buscarDuenho(@Param("Duenho") String Duenho);
+
+    @Query(value = "SELECT * FROM duenho d WHERE d.edad >'30' AND d.edad<'65' ORDER by d.edad DESC", nativeQuery = true)
+    List<Duenho> buscarEdadDuenho();
 }

@@ -41,6 +41,7 @@ public class DuenhoController {
     public Optional<Duenho> listarId(@PathVariable("id") Integer id) {
         return pService.listarId(id);
     }
-
+@GetMapping("/buscarduenhoedad")
+    public List<Duenho> buscarEdadDuenho(){return pService.buscarEdadDuenho();}
 
 }

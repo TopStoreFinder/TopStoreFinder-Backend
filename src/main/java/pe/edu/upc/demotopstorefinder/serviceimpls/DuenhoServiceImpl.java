@@ -40,4 +40,9 @@ public class DuenhoServiceImpl implements IDuenhoService {
     public Optional<Duenho> listarId(int idduenho) {
         return pR.findById(idduenho);
     }
+
+    @Override
+    public List<Duenho> buscarEdadDuenho() {
+        return pR.buscarEdadDuenho();
+    }
 }
