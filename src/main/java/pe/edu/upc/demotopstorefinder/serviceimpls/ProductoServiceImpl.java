@@ -48,7 +48,6 @@ public class ProductoServiceImpl implements IProductoService {
     public List<Producto> buscarProducto(String NombreProducto) {
         return buscarProducto(NombreProducto);
     }
-
     @Override
     public List<ResultadoCantidadProductosporcadaTienda> BuscarCantidadProductosPorTienda() {
         List<ResultadoCantidadProductosporcadaTienda> lista = new ArrayList<>();
@@ -63,4 +62,5 @@ public class ProductoServiceImpl implements IProductoService {
 
         return lista;
     }
+
 }
