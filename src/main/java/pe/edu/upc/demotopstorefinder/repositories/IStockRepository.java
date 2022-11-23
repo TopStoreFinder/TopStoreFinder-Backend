@@ -15,4 +15,7 @@ public interface IStockRepository extends JpaRepository<Stock,Integer> {
     @Query(value ="select p.nombre_producto,s.en_stock from producto p inner join stock s on p.id_stock = s.id" ,nativeQuery = true)
     List<String[]> MostrarStockPorProducto();
 
+    @Query(value ="select p.nombre_producto,s.en_stock from producto p inner join stock s on p.id_stock = s.id where s.enStock < 50" ,nativeQuery = true)
+    List<String[]> MostrarStockPorProductoMenor50();
+
 }
