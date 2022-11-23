@@ -1,5 +1,5 @@
 package pe.edu.upc.demotopstorefinder.serviceinterfaces;
-
+import pe.edu.upc.demotopstorefinder.entities.ResultadoCantidadPreciosDeterminados;
 import pe.edu.upc.demotopstorefinder.entities.Tiendaproducto;
 
 import java.util.List;
@@ -15,4 +15,5 @@ public interface ITiendaproductoService {
 
     List<Tiendaproducto> listar();
 
+    List<ResultadoCantidadPreciosDeterminados> BuscarCantidadPreciosDeterminados();
 }
