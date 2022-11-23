@@ -13,4 +13,6 @@ public interface ITipoProductoRepository extends JpaRepository<TipoProducto,Inte
 
     @Query("from TipoProducto tp where lower(tp.categoriaNombre) like lower(concat('%', :categoriaNombre,'%'))")//PERSONALIZA LA BUSQUEDA DE JPQL
     List<TipoProducto> buscarCategoriaNombre(@Param("categoriaNombre") String categoriaNombre);
+    @Query(value="select tp.categoria_nombre, count(p.id) AS cantidad from tipo_producto tp inner join producto p on p.categoria_prodcuto = tp.id  group by (tp.categoria_nombre)",nativeQuery = true)
+    List<String[]> BuscarCantidadProductosTipo();
 }
