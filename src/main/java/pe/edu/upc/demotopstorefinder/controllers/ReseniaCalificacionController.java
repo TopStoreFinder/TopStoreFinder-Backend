@@ -1,9 +1,7 @@
 package pe.edu.upc.demotopstorefinder.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.demotopstorefinder.entities.ReseniaCalificacion;
-import pe.edu.upc.demotopstorefinder.entities.Comprador;
-import pe.edu.upc.demotopstorefinder.entities.Tienda;
+import pe.edu.upc.demotopstorefinder.entities.*;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.IReseniaCalificacionService;
 
 import java.text.ParseException;
@@ -45,5 +43,10 @@ public class ReseniaCalificacionController {
     @GetMapping("/{id}")
     public Optional<ReseniaCalificacion> listarId(@PathVariable("id") Integer id) {
         return rService.listarId(id);
+    }
+
+    @GetMapping("/BuscarCantidadReseniasPorTienda")
+    public List<ResultadoCantidadReseniaporTienda> ResultadoCantidadReseniaporTienda(){
+        return rService.BuscarCantidadReseniasPorTienda();
     }
 }

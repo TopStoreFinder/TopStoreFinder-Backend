@@ -13,4 +13,8 @@ public interface IReseniaCalificacionRepository extends JpaRepository<ReseniaCal
 
     @Query("from ReseniaCalificacion r where lower(r.resenia) like lower(concat('%', :resenia,'%'))")
     List<ReseniaCalificacion> buscarReseniaCalificacion(@Param("resenia") String resenia);
+
+    @Query(value ="select t.nombre,count(r.id) from tienda t inner join resenia_calificacion r on r.tiendaid = t.id group by t.nombre" ,nativeQuery = true)
+    List<String[]> BuscarCantidadReseniasPorTienda();
+
 }

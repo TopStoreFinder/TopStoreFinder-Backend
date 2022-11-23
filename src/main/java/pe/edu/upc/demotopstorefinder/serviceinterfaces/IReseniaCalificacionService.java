@@ -1,5 +1,6 @@
 package pe.edu.upc.demotopstorefinder.serviceinterfaces;
 import pe.edu.upc.demotopstorefinder.entities.ReseniaCalificacion;
+import pe.edu.upc.demotopstorefinder.entities.ResultadoCantidadReseniaporTienda;
 
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface IReseniaCalificacionService {
     List<ReseniaCalificacion> listar();
 
     List<ReseniaCalificacion> buscarResenia(String resenia);
+
+    List<ResultadoCantidadReseniaporTienda> BuscarCantidadReseniasPorTienda();
 }
