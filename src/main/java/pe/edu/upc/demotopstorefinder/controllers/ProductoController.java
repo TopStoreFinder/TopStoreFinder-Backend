@@ -3,6 +3,7 @@ package pe.edu.upc.demotopstorefinder.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.demotopstorefinder.entities.Producto;
+import pe.edu.upc.demotopstorefinder.entities.ResultadoCantidadProductosporcadaTienda;
 import pe.edu.upc.demotopstorefinder.serviceinterfaces.IProductoService;
 
 import java.util.List;
@@ -44,4 +45,8 @@ public class ProductoController {
         return pService.listarId(id);
     }
 
+    @GetMapping("/buscarcantidadtiendasporproducto")
+    public List<ResultadoCantidadProductosporcadaTienda> ResultadoCantidadProductosporcadaTienda(){
+        return pService.BuscarCantidadProductosPorTienda();
+    }
 }
