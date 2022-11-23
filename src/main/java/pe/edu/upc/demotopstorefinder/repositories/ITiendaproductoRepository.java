@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface ITiendaproductoRepository extends JpaRepository<Tiendaproducto, Integer> {
-    @Query(value ="SELECT p.nombre_producto, p.precio_unidad, count (t.productoid) FROM tiendaproducto t inner join producto p ON p.id = t.productoid where precio_unidad > 50 GROUP BY (p.nombre_producto,p.precio_unidad))" ,nativeQuery = true)
+    @Query(value ="SELECT p.nombre_producto, p.precio_unidad, count (t.productoid) FROM tiendaproducto t inner join producto p ON p.id = t.productoid where precio_unidad > 50 GROUP BY (p.nombre_producto,p.precio_unidad)" ,nativeQuery = true)
     List<String[]> BuscarCantidadPreciosDeterminados();
 
 }
